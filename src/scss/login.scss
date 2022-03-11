@@ -1,0 +1,237 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200&family=Roboto+Condensed:wght@300&display=swap");
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // background-image: url("../img/_bg.jpg");
+    // background-size: cover;
+    // background-repeat: no-repeat;
+}
+
+#home-page {
+    margin-top: 3rem;
+    #title-chk {
+        visibility: hidden;
+    }
+
+    #title,
+    #title-chk {
+        position: absolute;
+        left: -20%;
+        top: 60%;
+        font-family: "Nunito", sans-serif;
+        font-size: 44px;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        transition: 0.7s cubic-bezier(0.7, 0.5, 0.3, 0.1);
+        z-index: 2;
+    }
+
+    #title-chk:checked ~ #title,
+    & {
+        position: absolute;
+        // margin-top: 0rem;
+        top: 5%;
+        transition: 0.7s cubic-bezier(0.2, 0.5, 0.7, 1);
+    }
+
+    #title-chk:checked ~ #login {
+        visibility: visible;
+        position: relative;
+        opacity: 1;
+        bottom: -5.5rem;
+    }
+
+    #login {
+        visibility: hidden;
+        opacity: 0;
+        transition: 0.7s ease-in-out;
+        position: relative;
+        left: -10rem;
+        bottom: -10.5rem;
+        margin-top: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        :not(h1) {
+            margin-bottom: 1rem;
+        }
+        .login-form {
+            font-family: "Roboto Condensed", sans-serif;
+            line-height: 24px;
+            input:not(.submit-btn) {
+                background-color: transparent;
+                border: none;
+                border-bottom: 2px solid black;
+                &:focus {
+                    border: none;
+                    border-bottom: 2px solid rgba(86, 97, 115, 0.5);
+                    outline: none;
+                }
+            }
+            .submit-btn {
+                position: relative;
+                left: 10%;
+                background-color: rgba(86, 97, 115, 0.5);
+                border: 1px solid rgba(86, 97, 115, 0.5);
+                padding: 7px 50px;
+                color: rgba($color: #000000, $alpha: 0.8);
+                font-weight: 700;
+                cursor: pointer;
+            }
+        }
+
+        .forgot-password-btn {
+            padding: 10px;
+            border-radius: 0.5rem;
+            border: none;
+            color: black;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        #forgot-password-popup {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: 0;
+            background: rgba(0, 0, 0, 0.6);
+            transition: opacity 500ms;
+            visibility: hidden;
+            opacity: 0;
+            transition: 0.5s;
+            &:target {
+                visibility: visible;
+                opacity: 1;
+            }
+            .pop-up {
+                height: 40vh;
+                width: 25%;
+                background-color: rgba(228, 228, 228, 0.952);
+                position: fixed;
+                left: 38%;
+                top: 25%;
+                border-radius: 0.5rem;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                h1 {
+                    margin-bottom: 2rem;
+                }
+                .reset-form {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    input {
+                        display: block;
+                        font-size: 14px;
+                    }
+                    .forgot-password-mail {
+                        outline: none;
+                        width: 80%;
+                        background-color: transparent;
+                        border: none;
+                        border-bottom: 2px solid black;
+                        &::placeholder {
+                            color: black;
+                        }
+                    }
+                    .forgot-password-submit {
+                        margin-top: 1rem;
+                        background-color: transparent;
+                        border: 3px solid #49d49d ;
+                        border-radius: 30px/40px;
+                        padding: 5px 25px;
+                        cursor: pointer;
+                        transition: .3s;
+                        letter-spacing: 1px;
+                        &:hover {
+                            background-color: #49d49d ;
+                        }
+                    }
+                }
+                .close-pop-up {
+                    position: absolute;
+                    right: 10px;
+                    top: 10px;
+                    font-size: 12px;
+                    color: black;
+                    transition: 0.5s;
+                    &:hover {
+                        color: red;
+                    }
+                }
+            }
+        }
+
+        .or {
+            margin-top: 1rem;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            width: 300px;
+            margin-left: 5px;
+            margin-right: 8px;
+
+            .left {
+                border: 2px solid black;
+                width: 200px;
+                margin-right: 8px;
+            }
+            .right {
+                border: 2px solid black;
+                width: 200px;
+                margin-left: 5px;
+            }
+        }
+        .register {
+            margin-top: .5rem;
+            button {
+                background-color: rgba(255, 255, 255, 0.753);
+                border: none;
+                border-radius: 10px;
+                padding: 7px 50px;
+                color: rgba($color: #000000, $alpha: 0.8);
+                font-weight: 700;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    body {
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: 0 3vh;
+    }
+
+    #home-page {
+        top: -2rem;
+    }
+
+    #title-chk:checked ~ #title,
+    & {
+        position: absolute;
+        // margin-top: 0rem;
+        top: 20%;
+        transition: 0.7s cubic-bezier(0.2, 0.5, 0.7, 1);
+    }
+
+    #title-chk:checked ~ #login {
+        visibility: visible;
+        position: relative;
+        opacity: 1;
+        bottom: 0rem;
+        top: 20%;
+    }
+}

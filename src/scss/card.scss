@@ -1,0 +1,147 @@
+@import url("https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap");
+$font-style: "Smooch Sans", sans-serif;
+$font-style2: "Roboto Condensed", sans-serif;
+
+.card {
+    background-color: #242625;
+    border-radius: 10px;
+    box-shadow: 25px 25px 50px #1b1c1b, -10px -10px 25px;
+    transition: 0.2s;
+    font-family: $font-style;
+    letter-spacing: 1px;
+    &:hover {
+        margin-top: -1rem;
+    }
+    .card_content {
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .card_header {
+            margin: 0 5rem;
+            margin-top: 8px;
+        }
+        .card_info {
+            margin-top: 15px;
+            text-align: center;
+            font-family: $font-style2;
+            font-size: 14px;
+        }
+        .options {
+            width: 15rem;
+            height: 2.3rem;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            margin-top: 2.5rem;
+
+            .card_button {
+                background: #1f75c4;
+                border: none;
+                color: white;
+                padding: 10px 25px;
+                border-radius: 1rem;
+                letter-spacing: 2px;
+                cursor: pointer;
+            }
+            .fa-solid {
+                font-size: 14px;
+                margin-top: 0.7rem;
+                margin-left: -2rem;
+                cursor: pointer;
+            }
+            .product-id{
+                visibility: hidden;
+                display: none;
+            }
+        }
+
+        #edit-popup {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: 0;
+            background: rgba(0, 0, 0, 0.6);
+            transition: opacity 500ms;
+            visibility: hidden;
+            opacity: 0;
+            transition: 0.5s;
+            z-index: 200000;
+            &:target {
+                visibility: visible;
+                opacity: 1;
+            }
+            h1 {
+                margin-bottom: 2rem;
+            }
+            .edit {
+                height: 40vh;
+                width: 25%;
+                background-color: rgba(228, 228, 228, 0.952);
+                position: fixed;
+                left: 38%;
+                top: 25%;
+                border-radius: 0.5rem;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-evenly;
+                
+                input {
+                    display: block;
+                    font-size: 14px;
+                }
+                .edit-name {
+                    outline: none;
+                    width: 80%;
+                    background-color: transparent;
+                    border: none;
+                    border-bottom: 2px solid black;
+                    &::placeholder {
+                        color: black;
+                    }
+                }
+                .edit-description {
+                    outline: none;
+                    width: 80%;
+                    background-color: transparent;
+                    border: none;
+                    border-bottom: 2px solid black;
+                    &::placeholder {
+                        color: black;
+                    }
+                }
+                .edit-save-btn {
+                    margin-top: 1rem;
+                    background-color: transparent;
+                    border: 3px solid #49d49d;
+                    border-radius: 30px/40px;
+                    padding: 5px 25px;
+                    cursor: pointer;
+                    transition: 0.3s;
+                    letter-spacing: 1px;
+                    &:hover {
+                        background-color: #49d49d;
+                    }
+                }
+                .close-pop-up2 {
+                    position: absolute;
+                    // right: 10rem;
+                    // top: 10px;
+                    right: 10px;
+                    top: 15px;
+                    font-size: 10px;
+                    color: black;
+                    transition: 0.5s;
+                    &:hover {
+                        color: red;
+                    }
+                }
+            }
+        }
+    }
+}
