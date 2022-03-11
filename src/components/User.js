@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import '../css/user.css'
+import '../css/style.css';
 import UserCard from './UserCard';
 
 const User = () => {

@@ -1,7 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import '../css/admin.css'
+import '../css/style.css';
 import Card from './Card'
 import Logout from '../actions/Logout'
 

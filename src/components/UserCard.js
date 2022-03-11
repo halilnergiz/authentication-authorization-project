@@ -1,6 +1,5 @@
-import axios from 'axios'
 import React from 'react'
-import '../css/user-card.css'
+import '../css/style.css';
 
 const UserCard = (props) => {
 

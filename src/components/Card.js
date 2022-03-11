@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { useState } from 'react'
-import '../css/card.css'
+import '../css/style.css';
+
 
 const Card = (props) => {
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Routes, Route } from 'react-router-dom'
-import { Login, Register, User, Admin, Error, ResetPassword } from './components/index'
+import { Login, Register, User, Admin, Error } from './components/index'
 
 class App extends Component {
     render() {

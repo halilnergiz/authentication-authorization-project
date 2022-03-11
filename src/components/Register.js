@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import '../css/register.css'
+import '../css/style.css';
 import { Link } from 'react-router-dom'
 
 class Register extends Component {
