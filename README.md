@@ -38,3 +38,7 @@ $npm i
 ```
 $npm start
 ```
+
+- API https://github.com/AdyPolyCode/auth-node-js 
+
+- Use the Mailtrap for this project e-mail
