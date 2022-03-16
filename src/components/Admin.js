@@ -3,12 +3,11 @@ import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import '../css/style.css';
 import Card from './Card'
-import Logout from '../actions/Logout'
 
 const Admin = () => {
 
   const navigate = useNavigate();
-  localStorage.setItem('login', true)
+  localStorage.setItem('login', true);
 
   const [productTitle, setTitle] = useState('');
   const [productDescription, setDescription] = useState('');
@@ -35,10 +34,6 @@ const Admin = () => {
     setDescription(e.target.value);
 
   }
-
-  // const checkPrice = (e) => {
-  //   setPrice(e.target.value);
-  // }
 
   const logout = () => {
     axios.get('http://localhost:5555/api/auth/logout')
@@ -141,10 +136,6 @@ const Admin = () => {
     getData()
   }, []);
 
-  // const a = (e) => {
-  //   console.log(e.target.value);
-  // }
-
   return (
     <div className="admin-area">
 
@@ -188,10 +179,7 @@ const Admin = () => {
 
           <input type="text" className='product-description' placeholder='Product Description'
             onChange={checkDescription} value={productDescription} />
-
-          {/* <input type="text" className='product-description' placeholder='Price'
-            onChange={checkPrice} value={productPrice} /> */}
-
+            
           <input type="submit" value='Add' className='add-btn-popup' onClick={addProduct} />
         </form>
       </div>
